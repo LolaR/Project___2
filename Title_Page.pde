@@ -1,6 +1,6 @@
 int buttonx = 220;
-int buttony = 280;
-//sdasdasd
+int buttony = 250;
+
 void drawPage1(){
   if(drag == 1){
     buttonx = mouseX;
