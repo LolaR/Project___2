@@ -68,6 +68,32 @@ void mousePressed(){
   if(mouseX > bx+10 && mouseX < bx+40 && mouseY > by && mouseY < by+35){
     drag = 7;
   }
+  
+  if(page ==8){
+    
+   /* 
+    if(u press button 1){
+      page = "2"
+      
+    }
+    
+    if(u press 2 && levelPlay <= 2){
+     page = "3" 
+    }
+    
+    
+        if(u press 3 && levelPlay <= 3){
+     page = "5" 
+    }
+    
+    
+    
+    
+    */
+     
+    
+  }
+  
 }
 void mouseReleased(){
   drag = 0;
