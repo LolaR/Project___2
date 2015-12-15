@@ -1,5 +1,5 @@
 int buttonx = 220;
-int buttony = 250;
+int buttony = 280;
 //sdasdasd
 void drawPage1(){
   if(drag == 1){
