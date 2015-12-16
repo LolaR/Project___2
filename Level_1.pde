@@ -1,7 +1,10 @@
 //variables for the basket
 int bx = 0;
 int by = 270;
+
 //variables for falling objects
+int wrapx = 100;
+int wrapy = 50;
 
 void drawPage2(){
   //background of game
@@ -49,4 +52,36 @@ void drawPage2(){
   fill(256);
   stroke(256);
   rect(bx+10,by,30,35);
+  
+  //helper shapes for basket collisions
+  ellipse(bx+28,by+15,40,40);
+  
+  //collisions
+  if(dist(bx+28,by+15,wrapx,wrapy)<35){
+    tCount++;
+  }
+  
+  //falling objects
+  wrapy = wrapy+4;
+  if(wrapy>310){
+    wrapy=-30;
+  }
+  fill(#F5CF68);
+  ellipse(wrapx,wrapy,30,30);
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
