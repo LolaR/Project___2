@@ -9,10 +9,13 @@ float c2t = 0;
 //variables for the good things
 float r1x = 200;
 float r1y = 200;
-float r2x = 200;
-float r2y = 200;
+int r2x = (int)random(450)+10;
+int r2y = 200;
 float r3x = 200;
 float r3y = 200;
+int r2VY = 5;
+float r1t = 0;
+float r3t = 0;
 void drawPage3(){
   //ground for this level
   fill(#E0D948);
@@ -59,6 +62,24 @@ void drawPage3(){
   stroke(256);
   rect(bx+10,by,30,35);
   
+  //helper shapes to do a collision
+  fill(0);
+  stroke(0);
+  ellipse(bx,by,5,5); //help with winning points especially
+  ellipse(bx+10,by,5,5);
+  ellipse(bx+20,by,5,5);
+  ellipse(bx+30,by,5,5);
+  ellipse(bx+40,by,5,5);
+  ellipse(bx+50,by,5,5);
+  //help with lossing all the points
+  ellipse(bx+10,by+35,5,5); //theses are at the bottom of the basket
+  ellipse(bx+20,by+35,5,5);
+  ellipse(bx+30,by+35,5,5);
+  ellipse(bx+40,by+35,5,5);
+  ellipse(bx+5,by+17,5,5); //this is on the left side on the main face
+  ellipse(bx+45,by+17,5,5); //this is on the right side on the main face
+  ellipse(bx+60,by-6,5,5); //this is on the right size on the top side face
+  
   //obstacles that will result in the person lossing all their points
   
   //the first bad thing on the left of the screen
@@ -79,4 +100,35 @@ void drawPage3(){
   
   //obstacles that will help move onto the next level
   
+  //the first good thing
+  r1t += 0.10;
+  r1y+=5;
+  if(r1y>290){
+    r1y = -10;
+  }
+  r1x = 100 + 50 * cos(r1t);
+  fill(#CC0000);
+  stroke(#000000);
+  ellipse(r1x,r1y,20,20);
+  
+  //the second good thing
+  r2y += r2VY;
+  if(r2y>290){
+    r2y = -20;
+    r2x = (int)random(450)+10;
+  }
+  fill(#CC0000);
+  stroke(#000000);
+  ellipse(r2x,r2y,20,20);
+  
+  //the third good thing
+  r3t += 0.15;
+  r3y += 5;
+  if(r3y>290){
+    r3y = -50;
+  }
+  r3x = 250 + 50 * cos(r3t);
+  fill(#CC0000);
+  stroke(#000000);
+  ellipse(r3x,r3y,20,20);
 }  
