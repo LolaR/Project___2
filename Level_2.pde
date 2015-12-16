@@ -44,7 +44,7 @@ void drawPage3(){
   
   
   //GOAL of LEVEL
-  if(tCount>3){
+  if(tCount>1){
     //alpha = 0;
     fill(#DE0202);
     ellipse(450,300,50,50);
@@ -79,8 +79,8 @@ void drawPage3(){
   rect(bx+10,by,30,35);
   
   //helper shapes to do a collision
-  fill(0);
-  stroke(0);
+  fill(256);
+  stroke(256);
   ellipse(bx,by,5,5); //help with winning points especially
   ellipse(bx+10,by,5,5);
   ellipse(bx+20,by,5,5);
@@ -464,19 +464,19 @@ void drawPage3(){
   }
   if(dist(bx+60,by-6,c2x,c2y)<=10){
     text("Game OVer", 200,130);
-    r1y = -1000;
-    r2y = -2000;
-    r3y = -1000;
+    r1y = -500;
+    r2y = -1000;
+    r3y = -500;
     bx = 0;
     by = 270;
     tCount = 0;
   } 
   
   //collision for advancing to next level
-  if(dist(450,300,bx+20,by+35)<=0){
-    page = 8;
+  if(dist(450,300,bx+20,by+35)<=10){
+    page = 7;
   }
-  if(dist(450,300,bx+30,by+35)<=0){
-    page = 8;
+  if(dist(450,300,bx+30,by+35)<=10){
+    page = 7;
   }  
 }  
