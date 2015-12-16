@@ -63,6 +63,13 @@ void mousePressed(){
   if(mouseX > bx+10 && mouseX < bx+40 && mouseY > by && mouseY < by+35){
     drag = 7;
   }
+  //For winning statement Complete Level 2
+  if(mouseX>bw1x && mouseX<bw1x+108 && mouseY>bw1y && mouseY<bw1y+40){
+   page = 4; 
+  }
+  if(mouseX>bw2x && mouseX<bw2x+108 && mouseY>bw2y && mouseY<bw2y+40){
+   page = 8; 
+  }   
   
   if(page ==8){
     

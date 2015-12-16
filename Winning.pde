@@ -1,7 +1,7 @@
-int bw1x = 150;
-int bw1y = 150;
-int bw2x = 200;
-int bw2y = 100;
+int bw1x = 191;
+int bw1y = 130;
+int bw2x = 191;
+int bw2y = 190;
 void drawPage7(){
   //After Level 2
   //this brings the person to the next level.
@@ -20,5 +20,5 @@ void drawPage7(){
   textSize(20);
   text("Home", 218,217);  
   //collision for Complete Level 2
-  
+ 
 }
