@@ -40,11 +40,18 @@ void drawPage3(){
     bx = 420;
   }  
   
+  
+  
+  
   //GOAL of LEVEL
   if(tCount>3){
-    alpha = 0;
+    //alpha = 0;
     fill(#DE0202);
     ellipse(450,300,50,50);
+    r1y = -200;
+    r2y = -200;
+    r3y = -200;
+    
   }
   
   stroke(#000000);
@@ -98,6 +105,8 @@ void drawPage3(){
   fill(#00CC00);
   stroke(#000000);
   ellipse(c1x, c1y, 30,30);
+  
+  
   
   //the second bad thing on the right of the screen
   c2t += 0.1;
@@ -221,6 +230,8 @@ void drawPage3(){
     tCount++;
   }  
   
+  
+  println( r1y);
   
   //collisions for the bad objects
   
