@@ -1,5 +1,6 @@
 int page = 1;
 int drag = 0;
+int tCount;
 
 void setup (){
   size(480,320);
@@ -43,27 +44,21 @@ void draw(){
 void mousePressed(){
   if(mouseX > buttonx && mouseX < buttonx+50 && mouseY > buttony && mouseY < buttony+20){
     page = 8; //button leads to level page
-    drag = 1;
   }
   if(mouseX > b1x && mouseX < b1x+30 && mouseY > b1y && mouseY < b1y+30){
     page = 2; //button leads to level 1
-    drag = 2;
   }
   if(mouseX > b2x && mouseX < b2x+30 && mouseY > b2y && mouseY < b2y+30){
     page = 3; //button leads to level 2
-    drag = 3;
   }
   if(mouseX > b3x && mouseX < b3x+30 && mouseY > b3y && mouseY < b3y+30){
     page = 4; //button leads to level 3
-    drag = 4;
   }
   if(mouseX > b4x && mouseX < b4x+30 && mouseY > b4y && mouseY < b4y+30){
     page = 5; //button leads to level 4
-    drag = 5;
   }
   if(mouseX > b5x && mouseX < b5x+30 && mouseY > b5y && mouseY < b5y+30){
     page = 6; //button leads to level 5
-    drag = 6;
   }
   if(mouseX > bx+10 && mouseX < bx+40 && mouseY > by && mouseY < by+35){
     drag = 7;

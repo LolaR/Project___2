@@ -24,7 +24,6 @@ void drawPage8() {
   fill(#FFFF00);
   rect(b1x, b1y, 30, 30, 7);
 
-
   if (levelPlay == 1) {
     fill(#bbbb00);
   }
@@ -45,7 +44,6 @@ void drawPage8() {
     fill(#bbbb00);
   }
   rect(b5x, b5y, 30, 30, 7);
-
 
   textSize(20);
   fill(#000000);

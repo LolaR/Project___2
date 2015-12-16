@@ -16,6 +16,7 @@ float r3y = 200;
 int r2VY = 5;
 float r1t = 0;
 float r3t = 0;
+int alpha = 256;
 void drawPage3(){
   //ground for this level
   fill(#E0D948);
@@ -38,6 +39,14 @@ void drawPage3(){
   if(bx>420){
     bx = 420;
   }  
+  
+  //GOAL of LEVEL
+  if(tCount>3){
+    alpha = 0;
+    fill(#DE0202);
+    ellipse(450,300,50,50);
+  }
+  
   stroke(#000000);
   fill(#C85FF2);
   quad(bx,by,bx+50,by,bx+40,by+35,bx+10,by+35);//big face of basket
@@ -107,8 +116,8 @@ void drawPage3(){
     r1y = -10;
   }
   r1x = 100 + 50 * cos(r1t);
-  fill(#CC0000);
-  stroke(#000000);
+  fill(#CC0000,alpha);
+  stroke(#000000,alpha);
   ellipse(r1x,r1y,20,20);
   
   //the second good thing
@@ -117,8 +126,8 @@ void drawPage3(){
     r2y = -20;
     r2x = (int)random(450)+10;
   }
-  fill(#CC0000);
-  stroke(#000000);
+  fill(#CC0000,alpha);
+  stroke(#000000,alpha);
   ellipse(r2x,r2y,20,20);
   
   //the third good thing
@@ -128,7 +137,335 @@ void drawPage3(){
     r3y = -50;
   }
   r3x = 250 + 50 * cos(r3t);
-  fill(#CC0000);
-  stroke(#000000);
+  fill(#CC0000,alpha);
+  stroke(#000000,alpha);
   ellipse(r3x,r3y,20,20);
+  
+  
+  //collisions and score
+  textSize(20);
+  fill(#000000);
+  text(tCount,25,310);
+  
+  //for the good objects
+  if(dist(bx,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  } 
+  if(dist(bx,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  }
+  if(dist(bx,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  }  
+  if(dist(bx+10,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  } 
+  if(dist(bx+10,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  }
+  if(dist(bx+10,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  }
+  if(dist(bx+20,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  }  
+  if(dist(bx+20,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  } 
+  if(dist(bx+20,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  } 
+  if(dist(bx+30,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  } 
+  if(dist(bx+30,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  } 
+  if(dist(bx+30,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  } 
+  if(dist(bx+40,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  } 
+  if(dist(bx+40,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  } 
+  if(dist(bx+40,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  }  
+  if(dist(bx+50,by,r1x,r1y)<=10){
+    r1y = -10;
+    tCount++;
+  } 
+  if(dist(bx+50,by,r2x,r2y)<=10){
+    r2y = -10;
+    tCount++;
+  } 
+  if(dist(bx+50,by,r3x,r3y)<=10){
+    r3y = -10;
+    tCount++;
+  }  
+  
+  
+  //collisions for the bad objects
+  
+  if(dist(bx,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }  
+  if(dist(bx+10,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+10,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  if(dist(bx+20,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+20,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+30,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+30,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  if(dist(bx+40,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+40,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }  
+  if(dist(bx+50,by,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+50,by,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }   
+  
+  if(dist(bx+10,by+35,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+10,by+35,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+20,by+35,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+20,by+35,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+30,by+35,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+30,by+35,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }  
+  if(dist(bx+40,by+35,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+40,by+35,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  
+  if(dist(bx+5,by+17,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+5,by+17,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  if(dist(bx+45,by+17,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  if(dist(bx+45,by+17,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  if(dist(bx+60,by-6,c1x,c1y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  }
+  if(dist(bx+60,by-6,c2x,c2y)<=10){
+    text("Game OVer", 200,130);
+    r1y = -1000;
+    r2y = -2000;
+    r3y = -1000;
+    bx = 0;
+    by = 270;
+    tCount = 0;
+  } 
+  
+  //collision for advancing to next level
+  if(dist(450,300,bx+20,by+35)<=0){
+    page = 8;
+  }
+  if(dist(450,300,bx+30,by+35)<=0){
+    page = 8;
+  }  
 }  
