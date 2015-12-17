@@ -67,21 +67,5 @@ void drawPage2(){
     wrapy=-30;
   }
   fill(#F5CF68);
-  ellipse(wrapx,wrapy,30,30);
-  
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  ellipse(wrapx,wrapy,30,30);  
 }

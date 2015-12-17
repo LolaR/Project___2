@@ -19,6 +19,4 @@ void drawPage7(){
   fill(#FFFFFF);
   textSize(20);
   text("Home", 218,217);  
-  //collision for Complete Level 2
- 
 }
