@@ -48,7 +48,7 @@ void mousePressed() {
   if (mouseX > b1x && mouseX < b1x+30 && mouseY > b1y && mouseY < b1y+30) {
     page = 2; //button leads to level 1
   }
-  if (mouseX > b2x && mouseX < b2x+30 && mouseY > b2y && mouseY < b2y+30) {
+  if (page == 8 && mouseX > b2x && mouseX < b2x+30 && mouseY > b2y && mouseY < b2y+30) {
     page = 3; //button leads to level 2
   }
   if (mouseX > b3x && mouseX < b3x+30 && mouseY > b3y && mouseY < b3y+30) {
@@ -65,7 +65,7 @@ void mousePressed() {
   }
   //For winning statement Complete Level 2
   if (mouseX>bw1x && mouseX<bw1x+108 && mouseY>bw1y && mouseY<bw1y+40) {
-    page = 4;
+   // page = 4;
   }
   if (mouseX>bw2x && mouseX<bw2x+108 && mouseY>bw2y && mouseY<bw2y+40) {
     page = 8;
