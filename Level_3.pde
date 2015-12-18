@@ -16,6 +16,7 @@ int t2x = (int)random(450);
 int t2y = 200;
 int t2VY = 5;
 void drawPage4() {
+
   //ground for this level
   fill(#E0D948);
   rect(-2, 280, 483, 40);
@@ -37,6 +38,28 @@ void drawPage4() {
   if (bx>420) {
     bx = 420;
   }
+
+  //GOAL of LEVEL
+  if (tCount>1) {
+    fill(#DE0202);
+    ellipse(450, 300, 50, 50);
+    t1y = -200;
+    t2y = -200;
+    
+
+
+  }
+  
+  game =3;
+  
+      //Continuing on to the next level
+    if (dist(450, 300, bx+20, by+35)<=10) {
+      page = 7;
+    }
+    if (dist(450, 300, bx+30, by+35)<=10) {
+      page = 7;
+    }
+
   stroke(#000000);
   fill(#C85FF2);
   quad(bx, by, bx+50, by, bx+40, by+35, bx+10, by+35);//big face of basket
@@ -120,43 +143,53 @@ void drawPage4() {
   rect(t2x+10, t2y, 10, 20); //trunk 
 
 
-  //collisions
+  //collisions and Score
+
+  textSize(20);
+  fill(#000000);
+  text(tCount, 25, 310);
+
 
   //collision for gaining points
   //for the first tree
-  if(bx+10 + 30 > t1x+10 && bx+10 < t1x+10 + 10 && by + 35 > t1y && by < t1y + 20) {
+  if (bx+10 + 30 > t1x+10 && bx+10 < t1x+10 + 10 && by + 35 > t1y && by < t1y + 20) {
     t2y = -100;
     t1y = -50;
+    tCount++;
   }  
   //for the second tree
-  if(bx+10 + 30 > t2x+10 && bx+10 < t2x+10 + 10 && by + 35 > t2y && by < t2y + 20) {
+  if (bx+10 + 30 > t2x+10 && bx+10 < t2x+10 + 10 && by + 35 > t2y && by < t2y + 20) {
     t2y = -100;
     t1y = -50;
+    tCount++;
   }
-  
+
   //collision for losing points
   //for the bad thing moving up and down on the left
-  if(bx+10 + 30 > s1x && bx+10 < s1x + 70 && by + 35 > s1y && by < s1y + 20){
+  if (bx+10 + 30 > s1x && bx+10 < s1x + 70 && by + 35 > s1y && by < s1y + 20) {
     textSize(30);
     fill(#000000);
-    text("Game Over", 200,130);
+    text("Game Over", 200, 130);
     t1y = -500;
     t2y = -300;
+    tCount = 0;
   }
   //for the bad thing moving up and down on the right
-  if(bx+10 + 30 > s2x && bx+10 < s2x + 70 && by + 35 > s2y && by < s2y + 20){
+  if (bx+10 + 30 > s2x && bx+10 < s2x + 70 && by + 35 > s2y && by < s2y + 20) {
     textSize(30);
     fill(#000000);
-    text("Game Over", 200,130);
+    text("Game Over", 200, 130);
     t1y = -500;
     t2y = -300;
+    tCount = 0;
   }
   //for the bad thing in the center 
-  if(dist(c3x,c3y,bx+28,by+15)<=10){
+  if (dist(c3x, c3y, bx+28, by+15)<=10) {
     textSize(30);
     fill(#000000);
-    text("Game Over", 200,130);
+    text("Game Over", 200, 130);
     t1y = -500;
     t2y = -300; 
+    tCount = 0;
   }
 }
