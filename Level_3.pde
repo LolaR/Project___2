@@ -63,7 +63,7 @@ void drawPage4() {
   //helper shapes for basket collisions
   ellipse(bx+28, by+15, 40, 40);  
 
-  //the first bad thing on the left of the screen
+  //the first bad thing in the middle of the screen
   c3t += 0.1;
   c3x = 250 + 80 * cos(c3t/2);
   c3y = 250 + 80 * sin(c3t);
@@ -123,12 +123,40 @@ void drawPage4() {
   //collisions
 
   //collision for gaining points
-  if (bx+10 + 30 > t2x+10 && bx+10 < t2x+10 + 10 && by + 35 > t2y && by < t2y + 20) {
-    textSize(20);
-    fill(#000000);
-    text("Game Over", 200, 140);
+  //for the first tree
+  if(bx+10 + 30 > t1x+10 && bx+10 < t1x+10 + 10 && by + 35 > t1y && by < t1y + 20) {
     t2y = -100;
+    t1y = -50;
+  }  
+  //for the second tree
+  if(bx+10 + 30 > t2x+10 && bx+10 < t2x+10 + 10 && by + 35 > t2y && by < t2y + 20) {
+    t2y = -100;
+    t1y = -50;
   }
-
-  //rect(bx+10, by, 30, 35);
+  
+  //collision for losing points
+  //for the bad thing moving up and down on the left
+  if(bx+10 + 30 > s1x && bx+10 < s1x + 70 && by + 35 > s1y && by < s1y + 20){
+    textSize(30);
+    fill(#000000);
+    text("Game Over", 200,130);
+    t1y = -500;
+    t2y = -300;
+  }
+  //for the bad thing moving up and down on the right
+  if(bx+10 + 30 > s2x && bx+10 < s2x + 70 && by + 35 > s2y && by < s2y + 20){
+    textSize(30);
+    fill(#000000);
+    text("Game Over", 200,130);
+    t1y = -500;
+    t2y = -300;
+  }
+  //for the bad thing in the center 
+  if(dist(c3x,c3y,bx+28,by+15)<=10){
+    textSize(30);
+    fill(#000000);
+    text("Game Over", 200,130);
+    t1y = -500;
+    t2y = -300; 
+  }
 }
