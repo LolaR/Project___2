@@ -37,6 +37,15 @@ void drawPage4() {
   if (bx>420) {
     bx = 420;
   }
+  
+  //GOAL of LEVEL
+  if (tCount>1) {
+    fill(#DE0202);
+    ellipse(450, 300, 50, 50);
+    t1y = -200;
+    t2y = -200;
+  }    
+  
   stroke(#000000);
   fill(#C85FF2);
   quad(bx, by, bx+50, by, bx+40, by+35, bx+10, by+35);//big face of basket
@@ -123,4 +132,51 @@ void drawPage4() {
   //collisions
   
   //collision for gaining points
+  //for the first thing
+  if(bx+10 + 30 > t1x && bx+10 < t1x + 10 && by + 35 > t1y && by < t1y + 20){
+    t1y = -10;
+    tCount++;
+  }  
+  //for the second thing
+  if(bx+10 + 30 > t2x && bx+10 < t2x + 10 && by + 35 > t2y && by < t2y + 20){
+    t2y = -10;
+    tCount++;
+  }
+  
+  //collision for losing points
+  //for the circle bad thing
+  if(dist(bx+28,by+15,c3x,c3y)<=5){
+   tCount = 0;
+   textSize(20);
+   fill(#000000);
+   text("Game Over", 200, 130);
+   t1y = -500;
+   t2y = -800;
+  }
+  //for the rectangle bad thing on the left
+  if(bx+10 + 30 > s1x && bx+10 < s1x + 70 && by + 35 > s1y && by < s1y + 20){
+   tCount = 0;
+   textSize(20);
+   fill(#000000);
+   text("Game Over", 200, 130);
+   t1y = -500;
+   t2y = -800;
+  }
+  //for the rectangle bad thing on the right
+  if(bx+10 + 30 > s2x && bx+10 < s2x + 70 && by + 35 > s2y && by < s2y + 20){
+   tCount = 0;
+   textSize(20);
+   fill(#000000);
+   text("Game Over", 200, 130);
+   t1y = -500;
+   t2y = -800;
+  }
+
+  //collision for advancing to next level
+  if (dist(450, 300, bx+20, by+35)<=10) {
+    page = 7;
+  }
+  if (dist(450, 300, bx+30, by+35)<=10) {
+    page = 7;
+  }  
 }
