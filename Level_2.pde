@@ -18,6 +18,7 @@ float r1t = 0;
 float r3t = 0;
 int alpha = 256;
 void drawPage3() {
+
   //ground for this level
   fill(#E0D948);
   rect(-2, 280, 483, 40);
@@ -41,15 +42,28 @@ void drawPage3() {
   }  
 
 
-  //GOAL of LEVEL
-  if (tCount>20) {
-    //alpha = 0;
+ //GOAL of LEVEL
+  if (tCount>1) {
     fill(#DE0202);
     ellipse(450, 300, 50, 50);
     r1y = -200;
     r2y = -200;
     r3y = -200;
+    
+
+
   }
+  
+  game =2;
+  
+      //Continuing on to the next level
+    if (dist(450, 300, bx+20, by+35)<=10) {
+      page = 7;
+    }
+    if (dist(450, 300, bx+30, by+35)<=10) {
+      page = 7;
+    }
+
 
   stroke(#000000);
   fill(#C85FF2);
@@ -226,7 +240,7 @@ void drawPage3() {
   }  
 
 
-  println( r1y);
+  //println( r1y);
 
   //collisions for the bad objects
 
@@ -465,13 +479,5 @@ void drawPage3() {
     bx = 0;
     by = 270;
     tCount = 0;
-  } 
-
-  //collision for advancing to next level
-  if (dist(450, 300, bx+20, by+35)<=10) {
-    page = 7;
-  }
-  if (dist(450, 300, bx+30, by+35)<=10) {
-    page = 7;
   }
 }  
