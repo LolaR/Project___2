@@ -38,25 +38,25 @@ void drawPage4() {
   if (bx>420) {
     bx = 420;
   }
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> origin/master
+  
+
+
+
   //GOAL of LEVEL
   if (tCount>1) {
     fill(#DE0202);
     ellipse(450, 300, 50, 50);
     t1y = -200;
     t2y = -200;
-<<<<<<< HEAD
+
   }    
   
-=======
+
     
 
 
-  }
+
   
   game =3;
   
@@ -68,7 +68,7 @@ void drawPage4() {
       page = 7;
     }
 
->>>>>>> origin/master
+
   stroke(#000000);
   fill(#C85FF2);
   quad(bx, by, bx+50, by, bx+40, by+35, bx+10, by+35);//big face of basket
@@ -160,7 +160,7 @@ void drawPage4() {
 
 
   //collision for gaining points
-<<<<<<< HEAD
+
   //for the first thing
   if(bx+10 + 30 > t1x && bx+10 < t1x + 10 && by + 35 > t1y && by < t1y + 20){
     t1y = -10;
@@ -208,7 +208,7 @@ void drawPage4() {
   if (dist(450, 300, bx+30, by+35)<=10) {
     page = 7;
   }  
-=======
+
   //for the first tree
   if (bx+10 + 30 > t1x+10 && bx+10 < t1x+10 + 10 && by + 35 > t1y && by < t1y + 20) {
     t2y = -100;
@@ -227,7 +227,7 @@ void drawPage4() {
   if (bx+10 + 30 > s1x && bx+10 < s1x + 70 && by + 35 > s1y && by < s1y + 20) {
     textSize(30);
     fill(#000000);
-    text("Game Over", 200, 130);
+   // text("Game Over", 200, 130);
     t1y = -500;
     t2y = -300;
     tCount = 0;
@@ -242,7 +242,7 @@ void drawPage4() {
     tCount = 0;
   }
   //for the bad thing in the center 
-  if (dist(c3x, c3y, bx+28, by+15)<=10) {
+  if (dist(c3x, c3y, bx+28, by+15)<=10){
     textSize(30);
     fill(#000000);
     text("Game Over", 200, 130);
@@ -250,5 +250,5 @@ void drawPage4() {
     t2y = -300; 
     tCount = 0;
   }
->>>>>>> origin/master
+
 }
